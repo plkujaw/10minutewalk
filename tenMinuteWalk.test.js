@@ -7,3 +7,14 @@ test("should return true for the valid directions", () => {
     tenMinuteWalk(["w", "s", "e", "e", "n", "n", "e", "s", "w", "w"])
   ).toBe(true); // 3 "w" + 3 "e" + 2 "s" + 2 "n" = 10
 });
+
+test("should return false for the invalid directions", () => {
+  expect(
+    tenMinuteWalk(["w", "s", "e", "n", "n", "e", "s", "w", "w", "w"])
+  ).toBe(false);
+  expect(
+    tenMinuteWalk(["w", "s", "e", "s", "s", "e", "s", "w", "n", "n"])
+  ).toBe(false);
+  expect(tenMinuteWalk(["w", "s"])).toBe(false);
+  expect(tenMinuteWalk(["w", "s", "e", "n"])).toBe(false);
+});
