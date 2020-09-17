@@ -1,17 +1,9 @@
 const tenMinuteWalk = (directionsArray) => {
-  let n = [];
-  let s = [];
-  let e = [];
-  let w = [];
-  directionsArray.forEach((direction) => {
-    if (direction === "n") {
-      n.push(direction);
-    } else if (direction === "s") {
-      s.push(direction);
-    } else if (direction === "e") {
-      e.push(direction);
-    } else w.push(direction);
-  });
+  const n = directionsArray.filter((direction) => direction === "n");
+  const s = directionsArray.filter((direction) => direction === "s");
+  const w = directionsArray.filter((direction) => direction === "w");
+  const e = directionsArray.filter((direction) => direction === "e");
+
   if (
     n.length === s.length &&
     e.length === w.length &&
